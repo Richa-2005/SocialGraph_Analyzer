@@ -1,0 +1,24 @@
+networkName,personA,personB
+Default,Alice,Bob
+Default,Bob,Charlie
+Default,Charlie,Alice
+Default,David,Emma
+Default,Emma,David
+Default,Frank,Frank
+Office,John,Emma
+Office,Emma,Rahul
+Office,Rahul,Priya
+Friends,Richa,Aisha
+Friends,Aisha,Manan
+Friends,Manan,Richa
+Office 2,Richa,Anushka
+Office 2,Preya,Richa
+Office 2,Kavya,Richa
+Office 2,Anushka,Preya
+Default,Manan,Bob
+Default,Alice,Manan
+StudyGroup,Allen,Max
+StudyGroup,Max,Allen
+StudyGroup,Pall,Allen
+StudyGroup,Max,Pall
+Default,Frank,David
