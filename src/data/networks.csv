@@ -8,15 +8,6 @@ Default,Frank,Frank
 Office,John,Emma
 Office,Emma,Rahul
 Office,Rahul,Priya
-Friends,Richa,Aisha
-Friends,Aisha,Manan
-Friends,Manan,Richa
-Office 2,Richa,Anushka
-Office 2,Preya,Richa
-Office 2,Kavya,Richa
-Office 2,Anushka,Preya
-Default,Manan,Bob
-Default,Alice,Manan
 StudyGroup,Allen,Max
 StudyGroup,Max,Allen
 StudyGroup,Pall,Allen
@@ -27,3 +18,11 @@ Default,Alice,Alice
 Default,Alice,Frank
 College,Tanvi,Prushti
 College,Hitansh,Divya
+StudyCircle,Asha,Asha
+StudyCircle,Asha,Riya
+StudyCircle,Riya,Asha
+StudyCircle,Riya,Riya
+StudyCircle,Kavya,Kavya
+StudyCircle,Kavya,Meera
+StudyCircle,Meera,Kavya
+StudyCircle,Meera,Meera

@@ -51,6 +51,7 @@ public class SocialGraphUI {
         // CENTER OUTPUT
         outputArea = new JTextArea();
         outputArea.setEditable(false);
+        outputArea.setFont(new Font("Monospaced", Font.PLAIN, 20));
         JScrollPane scrollPane = new JScrollPane(outputArea);
 
         // BOTTOM PANEL
@@ -122,14 +123,14 @@ public class SocialGraphUI {
         boolean trans = GraphAlgorithms.isTrans(matrix);
 
         int[][] closure = GraphAlgorithms.closure(matrix);
-        append("\nClosure Matrix size: " + closure.length + " x " + closure.length + "\n");
+        
 
         List<List<String>> groups = GraphAlgorithms.findGrps(
                 currentNetwork.getPeople(),
                 matrix
         );
-
         outputArea.setText("");
+        
 
         append(" FULL ANALYSIS \n");
         append("Network: " + currentNetwork.getNetworkName() + "\n\n");
@@ -139,7 +140,13 @@ public class SocialGraphUI {
         append("Relation Properties:\n");
         append("Reflexive: " + (ref ? "Yes" : "No") + "\n");
         append("Symmetric: " + (sym ? "Yes" : "No") + "\n");
-        append("Transitive: " + (trans ? "Yes" : "No") + "\n\n");
+        append("Transitive: " + (trans ? "Yes" : "No") + "\n");
+
+        if (ref && sym && trans) {
+            append("This relation is an equivalence relation.\n\n");
+        } else {
+            append("This relation is not an equivalence relation.\n\n");
+}
 
         append("Friendship Circles:\n");
 
@@ -186,7 +193,7 @@ public class SocialGraphUI {
         
 
     
-    private void showMatrix() {
+private void showMatrix() {
     if (currentNetwork == null) {
         outputArea.setText("Please load a network first.");
         return;
@@ -197,16 +204,17 @@ public class SocialGraphUI {
     int[][] mat = currentNetwork.getAdjacencyMatrix();
 
     sb.append("Adjacency Matrix:\n\n");
-    sb.append(String.format("%-12s", ""));
+
+    sb.append(String.format("%-14s", ""));
     for (String p : people) {
-        sb.append(String.format("%-12s", p));
+        sb.append(String.format("%-14s", p));
     }
     sb.append("\n");
 
     for (int i = 0; i < mat.length; i++) {
-        sb.append(String.format("%-12s", people.get(i)));
+        sb.append(String.format("%-14s", people.get(i)));
         for (int j = 0; j < mat.length; j++) {
-            sb.append(String.format("%-12d", mat[i][j]));
+            sb.append(String.format("%-14d", mat[i][j]));
         }
         sb.append("\n");
     }
@@ -224,16 +232,17 @@ private void showClosure() {
     int[][] closureMat = GraphAlgorithms.closure(currentNetwork.getAdjacencyMatrix());
 
     sb.append("Transitive Closure:\n\n");
-    sb.append(String.format("%-12s", ""));
+
+    sb.append(String.format("%-14s", ""));
     for (String p : people) {
-        sb.append(String.format("%-12s", p));
+        sb.append(String.format("%-14s", p));
     }
     sb.append("\n");
 
     for (int i = 0; i < closureMat.length; i++) {
-        sb.append(String.format("%-12s", people.get(i)));
+        sb.append(String.format("%-14s", people.get(i)));
         for (int j = 0; j < closureMat.length; j++) {
-            sb.append(String.format("%-12d", closureMat[i][j]));
+            sb.append(String.format("%-14d", closureMat[i][j]));
         }
         sb.append("\n");
     }
